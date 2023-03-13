@@ -9,6 +9,8 @@ const app = express();
 
 
 app.use(express.static("public"));
+// to get the relative url in the html page 
+// html page can redirect 
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.get("/",function(req,res){
