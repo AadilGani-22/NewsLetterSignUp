@@ -67,8 +67,4 @@ app.listen(process.env.PORT || 3000, function(){
     console.log("Server started on port");
 });
 
-// Api Keys
-// 710d9b48fb3fa1bb6b07c7e445573dcc-us10
 
-// Unique ID
-// e846a9f6a0.
