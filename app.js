@@ -4,6 +4,7 @@ const request = require("request");
 // const { url } = require("inspector");
 const https = require("https");
 const { json } = require("express/lib/response");
+require("dotenv").config();
 
 const app = express();
 
@@ -40,7 +41,7 @@ app.post("/",function(req,res){
 
     const options = {
         method:"POST",
-        auth:"aadil:710d9b48fb3fa1bb6b07c7e445573dcc-us10"
+        auth: process.env.API_KEY
     }
     const request = https.request(url,options,function(response){
 
@@ -50,9 +51,9 @@ app.post("/",function(req,res){
             res.sendFile(__dirname + "/faliure.html");
         }
 
-      response.on("data",function(data){
-          console.log(JSON.parse(data));
-      });
+    //   response.on("data",function(data){
+    //       console.log(JSON.parse(data));
+    //   });
 
     });
     request.write(jsonData);
